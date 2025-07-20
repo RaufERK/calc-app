@@ -4,16 +4,12 @@ module.exports = {
       name: 'calc-app',
       script: 'npm',
       args: 'start',
-      cwd: '/var/www/calc-app',
+      cwd: '/var/www/calc-app/current',
       instances: 1,
       autorestart: true,
       watch: false,
       max_memory_restart: '1G',
       env: {
-        NODE_ENV: 'production',
-        PORT: 3001,
-      },
-      env_production: {
         NODE_ENV: 'production',
         PORT: 3001,
       },
@@ -37,14 +33,15 @@ module.exports = {
         export PATH=$HOME/.nvm/versions/node/v22.15.1/bin:$PATH &&
         npm install &&
         npm run build &&
-        pm2 reload ecosystem.config.js --env production
+        PORT=3001 pm2 reload ecosystem.config.js --env production
       `,
       'pre-setup': '',
-      'post-setup': `
-        mkdir -p /var/log/calc-app &&
-        git config --global --add safe.directory /var/www/calc-app/source
-      `,
+      'post-setup': 'mkdir -p /var/log/calc-app',
       ssh_options: 'StrictHostKeyChecking=no',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3001,
+      },
     },
   },
 };
