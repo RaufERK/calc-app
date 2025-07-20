@@ -1,80 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧮 Calculator App
 
-## Getting Started
+Современное веб-приложение калькулятора, построенное с использованием Next.js, TypeScript и Tailwind CSS.
 
-First, run the development server:
+## ✨ Особенности
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Современный дизайн** с градиентами и анимациями
+- **Полнофункциональный калькулятор** с базовыми операциями
+- **Адаптивный интерфейс** для всех устройств
+- **TypeScript** для типобезопасности
+- **Tailwind CSS** для стилизации
+- **ESLint + Prettier** для качества кода
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Технологии
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS 4
+- **Code Quality**: ESLint, Prettier
+- **Development**: Turbopack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Установка и запуск
 
-## Learn More
+1. **Клонируйте репозиторий**:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/RaufERK/calc-app.git
+   cd calc-app
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Установите зависимости**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Запустите в режиме разработки**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Откройте браузер** и перейдите по адресу [http://localhost:3000](http://localhost:3000)
 
-## Development Tools
-
-This project includes several development tools to ensure code quality:
-
-### Code Quality
-
-- **ESLint**: Code linting with TypeScript and React rules
-- **Prettier**: Code formatting
-- **TypeScript**: Static type checking
-
-### Available Scripts
+## 🛠️ Доступные скрипты
 
 ```bash
-# Development
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
+# Разработка
+npm run dev          # Запуск сервера разработки
+npm run build        # Сборка для продакшена
+npm run start        # Запуск продакшен сервера
 
-# Code Quality
-npm run lint         # Check for linting errors
-npm run lint:fix     # Fix auto-fixable linting errors
-npm run format       # Format code with Prettier
-npm run format:check # Check if code is properly formatted
-npm run type-check   # Run TypeScript type checking
+# Качество кода
+npm run lint         # Проверка ESLint
+npm run lint:fix     # Автоматическое исправление ошибок ESLint
+npm run format       # Форматирование кода Prettier
+npm run format:check # Проверка форматирования
+npm run type-check   # Проверка типов TypeScript
 ```
 
-### VS Code Setup
+## 🎨 Функциональность калькулятора
 
-The project includes VS Code settings for:
-- Automatic formatting on save
-- ESLint integration
-- Tailwind CSS IntelliSense
-- TypeScript support
+- **Базовые операции**: сложение, вычитание, умножение, деление
+- **Очистка**: полная очистка и сброс
+- **Десятичные числа**: поддержка десятичных дробей
+- **Непрерывные вычисления**: возможность продолжать вычисления с результатом
+- **Визуальная обратная связь**: подсветка активных операций
 
-Install the recommended extensions when prompted by VS Code.
+## 🔧 Настройка VS Code
 
-### Code Style
+Проект включает настройки VS Code для:
 
-- Single quotes for strings
-- Semicolons required
-- 2 spaces indentation
-- Trailing commas in multiline objects/arrays
-- Curly braces required for all control structures
+- Автоматического форматирования при сохранении
+- Интеграции ESLint
+- Поддержки Tailwind CSS IntelliSense
+- TypeScript поддержки
+
+Установите рекомендуемые расширения при запросе VS Code.
+
+## 📋 Стиль кода
+
+- Одинарные кавычки для строк
+- Обязательные точки с запятой
+- Отступы в 2 пробела
+- Запятые в конце многострочных объектов/массивов
+- Обязательные фигурные скобки для всех управляющих конструкций
+
+## 🌐 Деплой
+
+Приложение готово к деплою на:
+
+- [Vercel](https://vercel.com) (рекомендуется для Next.js)
+- [Netlify](https://netlify.com)
+- Любую платформу, поддерживающую Node.js
+
+## 📄 Лицензия
+
+MIT License
+
+## 👨‍💻 Автор
+
+**RaufERK**
+
+---
+
+⭐ Если проект вам понравился, поставьте звездочку!
