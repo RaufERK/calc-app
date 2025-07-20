@@ -58,6 +58,7 @@ npm run type-check   # Проверка типов TypeScript
 
 # PM2 управление (для VPS)
 npm run deploy       # Полный деплой на VPS
+npm run pm2:deploy   # PM2 деплой на сервер
 npm run pm2:start    # Запуск приложения в PM2
 npm run pm2:stop     # Остановка приложения
 npm run pm2:restart  # Перезапуск приложения

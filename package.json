@@ -21,7 +21,7 @@
     "pm2:monit": "pm2 monit",
     "pm2:save": "pm2 save",
     "pm2:startup": "pm2 startup",
-    "deploy": "./deploy.sh"
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "dependencies": {
     "next": "15.4.2",
