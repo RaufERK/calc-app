@@ -27,16 +27,21 @@ module.exports = {
 
   deploy: {
     production: {
-      user: 'root',
+      user: 'appuser',
       host: '89.111.172.86',
       ref: 'origin/main',
       repo: 'https://github.com/RaufERK/calc-app.git',
       path: '/var/www/calc-app',
       'pre-deploy-local': '',
-      'post-deploy':
-        'npm install && npm run build && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': `
+        export PATH=$HOME/.nvm/versions/node/v22.15.1/bin:$PATH &&
+        npm install &&
+        npm run build &&
+        pm2 reload ecosystem.config.js --env production
+      `,
       'pre-setup': '',
       'post-setup': 'mkdir -p /var/log/calc-app',
+      ssh_options: 'StrictHostKeyChecking=no',
     },
   },
 };
