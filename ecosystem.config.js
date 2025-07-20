@@ -40,7 +40,10 @@ module.exports = {
         pm2 reload ecosystem.config.js --env production
       `,
       'pre-setup': '',
-      'post-setup': 'mkdir -p /var/log/calc-app',
+      'post-setup': `
+        mkdir -p /var/log/calc-app &&
+        git config --global --add safe.directory /var/www/calc-app/source
+      `,
       ssh_options: 'StrictHostKeyChecking=no',
     },
   },
