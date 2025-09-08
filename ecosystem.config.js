@@ -2,46 +2,32 @@ module.exports = {
   apps: [
     {
       name: 'calc-app',
-      script: 'npm',
-      args: 'start',
-      cwd: '/var/www/calc-app/current',
+      script: 'node_modules/next/dist/bin/next',
+      args: 'start -p 3033', // ← был 3001, ставим 3033
       instances: 1,
-      autorestart: true,
+      exec_mode: 'fork',
       watch: false,
-      max_memory_restart: '1G',
-      env: {
-        NODE_ENV: 'production',
-        PORT: 3001,
-      },
-      error_file: '/var/log/calc-app/err.log',
-      out_file: '/var/log/calc-app/out.log',
-      log_file: '/var/log/calc-app/combined.log',
-      time: true,
-      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      env: { NODE_ENV: 'production' },
+      env_production: { NODE_ENV: 'production' },
     },
   ],
 
   deploy: {
     production: {
       user: 'appuser',
-      host: '89.111.172.86',
+      host: 'amster_app', // ← как у тебя
       ref: 'origin/main',
       repo: 'https://github.com/RaufERK/calc-app.git',
-      path: '/var/www/calc-app',
-      'pre-deploy-local': '',
-      'post-deploy': `
-        export PATH=$HOME/.nvm/versions/node/v22.15.1/bin:$PATH &&
-        npm install &&
-        npm run build &&
-        PORT=3001 pm2 reload ecosystem.config.js --env production
-      `,
-      'pre-setup': '',
-      'post-setup': 'mkdir -p /var/log/calc-app',
-      ssh_options: 'StrictHostKeyChecking=no',
-      env: {
-        NODE_ENV: 'production',
-        PORT: 3001,
-      },
+      path: '/home/appuser/apps/calc-app',
+      'post-deploy': [
+        'source ~/.nvm/nvm.sh && nvm use --lts',
+        'ln -sf /home/appuser/shared/calc-app/.env.production ./.env.production || true',
+        'npm ci --include=dev',
+        'npm run build',
+        'pm2 startOrReload ecosystem.config.js --env production',
+        'pm2 save',
+      ].join(' && '),
+      env: { NODE_ENV: 'production' },
     },
   },
 };
