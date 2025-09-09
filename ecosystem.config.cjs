@@ -24,7 +24,7 @@ module.exports = {
         'ln -sf /home/appuser/shared/calc-app/.env.production ./.env.production || true',
         'npm ci --include=dev',
         'npm run build',
-        'pm2 startOrReload ecosystem.config.сjs --env production',
+        'pm2 startOrReload ecosystem.config.cjs --env production',
         'pm2 save',
       ].join(' && '),
       env: { NODE_ENV: 'production' },
